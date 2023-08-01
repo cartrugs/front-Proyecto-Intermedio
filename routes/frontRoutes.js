@@ -3,6 +3,6 @@ const router = express.Router();
 
 const { getPelis } = require('../controllers/frontController')
 
-// router.get('/', getPelis);
+//router.get('/', getPelis);
 
 module.exports = router
