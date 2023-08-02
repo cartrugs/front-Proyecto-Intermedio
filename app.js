@@ -15,6 +15,7 @@ app.set('views', __dirname + '/views');
 
 // LLAMAR RUTAS FRONT
 app.use("/", require("./routes/frontRoutes"));
+app.use("/admin", require('./routes/adminRoutes'))
 
 // LLAMAR A POSIBLE ERROR
 app.use((req, res, next) => {
