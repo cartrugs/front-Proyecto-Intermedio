@@ -1,0 +1,35 @@
+
+<main>
+    <h2>Administrador de Películas</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Imagen</th>
+                <th>Género</th>
+                <th>Año</th>
+                <th>Director</th>
+                <th>Duración</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (peliculas.length>0) { %>
+                <% peliculas.forEach(element => { %>
+                    <tr>
+                        <th><%= element.titulo %></th>
+                        <th><%= element.imagen %></th>
+                        <th><%= element.genero %></th>
+                        <th><%= element.anio %></th>
+                        <th><%= element.director %></th>
+                        <th><%= element.duracion %></th>
+                        <th><a href="/editar/<%= element.nombre %>">Editar</a></th>
+                        <th><a href="/eliminar/<%= element.nombre %>">Eliminar</a></th>
+                    </tr>
+                 
+                <% }) %>
+             
+            <% } %>
+        </tbody>
+    </table>
+</main>
