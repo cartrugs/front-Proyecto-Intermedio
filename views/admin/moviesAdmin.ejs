@@ -1,35 +1,61 @@
+<%- include('templates/adminNav.ejs') %>
+<%- include ('templates/head.ejs') %>
 
-<main>
-    <h2>Administrador de Películas</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Imagen</th>
-                <th>Género</th>
-                <th>Año</th>
-                <th>Director</th>
-                <th>Duración</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% if (peliculas.length>0) { %>
-                <% peliculas.forEach(element => { %>
+    <main>
+        <h2>Administrador de Películas</h2>
+
+
+        <section>
+
+            <a href="/admin/crear">Crear Película</a>
+            <input type="text" placeholder="Buscar peli...">
+            <button type="submit" class="btn">Buscar</button>
+
+        </section>
+
+        <div class="contenedorTabla">
+            <table>
+                <thead>
                     <tr>
-                        <th><%= element.titulo %></th>
-                        <th><%= element.imagen %></th>
-                        <th><%= element.genero %></th>
-                        <th><%= element.anio %></th>
-                        <th><%= element.director %></th>
-                        <th><%= element.duracion %></th>
-                        <th><a href="/editar/<%= element.nombre %>">Editar</a></th>
-                        <th><a href="/eliminar/<%= element.nombre %>">Eliminar</a></th>
+                        <th>Título</th>
+                        <th>Imagen</th>
+                        <th>Género</th>
+                        <th>Año</th>
+                        <th>Director</th>
+                        <th>Duración</th>
                     </tr>
-                 
-                <% }) %>
-             
-            <% } %>
-        </tbody>
-    </table>
-</main>
+                </thead>
+                <tbody>
+                    <% if (peliculas.length>0) { %>
+                        <% peliculas.forEach(element=> { %>
+                            <tr>
+                                <td class="dataTabla">
+                                    <%= element.titulo %>
+                                </td>
+                                <td class="dataTabla">
+                                    <%= element.imagen %>
+                                </td>
+                                <td class="dataTabla">
+                                    <%= element.genero %>
+                                </td>
+                                <td class="dataTabla">
+                                    <%= element.anio %>
+                                </td>
+                                <td class="dataTabla">
+                                    <%= element.director %>
+                                </td>
+                                <td class="dataTabla">
+                                    <%= element.duracion %>
+                                </td>
+                                <td><a href="/admin/editar/<%= element._id %>" class="btnTabla">Editar</a></td>
+                                <td><a href="/admin/eliminar/<%= element._id %>" class="btnTabla">Eliminar</a></td>
+                            </tr>
+
+                            <% }) %>
+
+                                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>

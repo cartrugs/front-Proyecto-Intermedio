@@ -1,19 +1,21 @@
+<%- include('templates/adminNav.ejs') %>
+
 <main>
     <h1>EDITAR PELÍCULA</h1>
-    <form action="" method="post">
+    <form action="../admin/editarMovie/editada" method="post" enctype="multipart/form-data">
         <p>Editar una película nueva</p>
-        <label for="titulo">Título</label>
-        <input type="text" placeholder="Título" name="titulo">
-        <label for="image">.jpg</label>
-        <!-- <input type="image" placeholder="Imagen:" name="imagen"> -->
-        <label for="genero"></label>
-        <input type="text" placeholder="Género:" name="genero">
-        <label for="anio"></label>
-        <input type="text" placeholder="Año:" name="anio">
-        <label for="director"></label>
-        <input type="text" placeholder="Director:" name="director">
-        <label for="duracion"></label>
-        <input type="text" placeholder="Duración" name="director">
+        <label for="titulo">Título:</label>
+        <input type="text" placeholder="título" name="titulo">
+        <label for="image">Imagen:</label>
+        <input type="file" placeholder="Imagen:" name="uploaded_file">
+        <label for="genero">Género:</label>
+        <input type="text" placeholder="género" name="genero">
+        <label for="anio">Año:</label>
+        <input type="text" placeholder="año" name="anio">
+        <label for="director">Director:</label>
+        <input type="text" placeholder="director" name="director">
+        <label for="duracion">Duración:</label>
+        <input type="text" placeholder="duración" name="director">
         <button type="submit" id="editaPeli" class="btn">Editar película</button>
     </form>
 </main>

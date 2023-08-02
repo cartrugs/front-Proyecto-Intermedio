@@ -23,8 +23,27 @@ const getPeliculas = async (req, res) => {
 }
 
 //Mostrar formulario de 'crear' pelicula
-const vistaCrearPelicula = (req, res) => {
-    res.render('admin/crearMovie')
+const vistaCrearPelicula = async (req, res) => {
+    try {
+
+        const resp = await fetch('http://localhost:4000/api/v1/movies/')
+        console.log(resp.data)
+
+        if (resp.ok) {
+            const peliculas = await resp.json()
+            res.render('admin/crearMovie.ejs', {
+                titulo: 'Editar peliculas',
+                peliculas: peliculas.data
+            })
+            
+            
+        }
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+    
 
     // const {titulo, imagen, genero, anio, director, duracion}=req.body
 
@@ -59,15 +78,23 @@ const nuevaPelicula = async (req, res) => {
 }
 
 //Mostrar el formulario de 'editar' pelicula
-const vistaEditarPelicula =(req,res)=>{
-        //recoger el id
+const vistaEditarPelicula = async (req,res)=>{
+try {
+    const movieId = req.params.id;
 
-        //comprobar si hay servicio con ese id
+    const resp = await fetch (`http://localhost:3000/api/v1/movies/${movieId}`);
+    const movieData = await resp.json();
 
-        //      si existe renderizamos la pagina de editar
-//     res.render('admin/editarMovie', {
+    res.render('admin/editarMovie.ejs', {
+        titulo: 'Editar Película',
+        movieData: movieData,
+    });
+    
+} catch (error) {
+    console.log(error)
+    
+}
 
-// })
 }
 
 
