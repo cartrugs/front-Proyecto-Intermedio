@@ -1,13 +1,15 @@
-<%- include ('templates/head.ejs') %>
+<%- include('templates/header.ejs') -%>
 <%- include('templates/adminNav.ejs') %>
     
 
         <main>
             <h1>EDITAR PELÍCULA</h1>
-            <form action="/api/v1/movies/<%= peliculas.id %>" method="post" enctype="multipart/form-data">
+            <form id="formulario"  action="http://localhost:3000/api/v1/movies/<%= peliculas._id %>" method="post" enctype="multipart/form-data">
                 <p>Editar una película</p>
+                <h2><%= peliculas._id %></h2>
                 <label for="titulo">Título:</label>
-                <input type="text"  value="<%= peliculas.titulo %>" name="titulo">
+                
+                <input type="text"  placeholder="<%= peliculas.titulo %>" name="titulo">
                 <label for="image">Imagen:</label>
                 <input type="file" placeholder="Imagen:" name="uploaded_file">
                 <label for="genero">Género:</label>
@@ -17,9 +19,9 @@
                 <label for="director">Director:</label>
                 <input type="text" value="<%= peliculas.director %>" name="director">
                 <label for="duracion">Duración:</label>
-                <input type="text" value="<%= peliculas.duracion %>" name="director">
+                <input type="text" value="<%= peliculas.duracion %>" name="duracion">
                 <button type="submit" id="editaPeli" class="btn" >Editar película</button>
             </form>
         </main>
-
+        <script src="/js/main.js"></script>
         <%- include ('templates/footer.ejs') %>

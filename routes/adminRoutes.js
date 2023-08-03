@@ -25,10 +25,10 @@ router.post('/nueva', nuevaPelicula)
 router.get('/editar/:id', vistaEditarPelicula)
 
 //Enviar la pelicula a la api de editar
-router.put('/editada', editarPelicula)
+router.put('/editada/:id', editarPelicula)
 
 //Eliminar la pelicula de la api de eliminar
-router.delete('/eliminar/:id', eliminarPelicula)
+router.delete('/eliminar', eliminarPelicula)
 
 
 module.exports = router
