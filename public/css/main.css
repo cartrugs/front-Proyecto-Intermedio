@@ -2,16 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
-
-.contenedorTabla th,
-.contenedorTabla td {
-    padding: 10px;
-    text-align: right;
-}
-
-
 
 /* RESPONSIVE */
 
@@ -21,10 +12,8 @@
 
 @media screen and (min-width: 992px) {
 
-
 }
 
 @media screen and (min-width: 1200px) {
-
 
 }

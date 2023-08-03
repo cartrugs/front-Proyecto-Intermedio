@@ -4,6 +4,14 @@ require('dotenv').config()
 
 const app = express();
 
+//CONEXIÓN BBDD
+// dbConnect();
+
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }))
+// parse application/json
+app.use(express.json())
+
 const port = process.env.PORT;
 
 // const multer = require('multer')
