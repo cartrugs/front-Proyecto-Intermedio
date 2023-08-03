@@ -22,13 +22,13 @@ router.get('/crear', vistaCrearPelicula)
 router.post('/nueva', nuevaPelicula)
 
 //Mostrar el formulario de 'editar' pelicula
-router.get('/editar', vistaEditarPelicula)
+router.get('/editar/:id', vistaEditarPelicula)
 
 //Enviar la pelicula a la api de editar
 router.put('/editada', editarPelicula)
 
 //Eliminar la pelicula de la api de eliminar
-router.delete('/eliminar', eliminarPelicula)
+router.delete('/eliminar/:id', eliminarPelicula)
 
 
 module.exports = router

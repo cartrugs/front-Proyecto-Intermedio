@@ -1,19 +1,27 @@
-<main>
-    <h1>CREAR PELÍCULA</h1>
-    <form action="../admin/crearMovie/nueva" method="post">
-        <p>Crea una película nueva</p>
-        <label for="titulo">Título</label>
-        <input type="text" placeholder="Título" name="titulo">
-        <label for="image">.jpg</label>
-        <!-- <input type="image" placeholder="Imagen:" name="imagen"> -->
-        <label for="genero"></label>
-        <input type="text" placeholder="Género:" name="genero">
-        <label for="anio"></label>
-        <input type="text" placeholder="Año:" name="anio">
-        <label for="director"></label>
-        <input type="text" placeholder="Director:" name="director">
-        <label for="duracion"></label>
-        <input type="text" placeholder="Duración" name="director">
-        <button type="submit" id="creaPeli" class="btn">Añadir película</button>
-    </form>
-</main>
+<%- include ('templates/head.ejs') %>
+<%- include('templates/adminNav.ejs') %>
+    
+
+
+
+        <main>
+            <h1>CREAR PELÍCULA</h1>
+            <form action="../admin/crearMovie/nueva" method="post" enctype="multipart/form-data">
+                <p>Crea una película nueva</p>
+                <label for="titulo">Título:</label>
+                <input type="text" placeholder="título" name="titulo" id="tituloId">
+                <label for="image">Imagen:</label>
+                <input type="file" placeholder="Imagen:" name="uploaded_file">
+                <label for="genero">Género:</label>
+                <input type="text" placeholder="género" name="genero">
+                <label for="anio">Año:</label>
+                <input type="text" placeholder="año" name="anio">
+                <label for="director">Director:</label>
+                <input type="text" placeholder="director" name="director">
+                <label for="duracion">Duración:</label>
+                <input type="text" placeholder="duración" name="director">
+                <button type="submit" id="crearPeli" class="btn">Añadir película</button>
+            </form>
+        </main>
+
+        <%- include ('templates/footer.ejs') %>

@@ -1,7 +1,13 @@
+<%- include ('templates/header.ejs', {
+    titulo: "ERROR 404",
+    descripcion: "Algo salió mal"
+}) %>
 <main>
-    <input type="submit" id="incioSesion" class="btn">Iniciar Sesion</input>
-    <input type="submit" id="creaCuenta" class="btn">Crear cuenta</input>
+    <input type="submit" id="inicioSesion" class="btn">Iniciar Sesion</input>
+    <input type="submit" id="crearCuenta" class="btn">Crear cuenta</input>
 
     <h2><%= titulo %></h2>
     <p>Algo salió mal.</p>
 </main>
+
+<%- include ('templates/footer.ejs')  %>

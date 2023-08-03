@@ -4,7 +4,18 @@ require('dotenv').config()
 
 const app = express();
 
+//CONEXIÓN BBDD
+// dbConnect();
+
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }))
+// parse application/json
+app.use(express.json())
+
 const port = process.env.PORT;
+
+// const multer = require('multer')
+// const upload = multer({dest: '/public/assets/uploads'})
 
 // CARPETA ESTÁTICA
 app.use(express.static(__dirname + '/public'));
@@ -23,6 +34,12 @@ app.use((req, res, next) => {
         titulo: 'ERROR 404'
     });
 });
+
+//MULTER UPLOADS
+// app.post('/stats', upload.single('uploaded_file'), function (req, res) {
+//     console.log(req.file, req.body)
+// });
+
 
 // MANTENER PUERTO A LA ESCUCHA
 app.listen(port, () => {
