@@ -99,9 +99,10 @@ const vistaEditarPelicula = async (req, res) => {
 const editarPelicula = async (req, res) => {
     console.log(req.body)
     try {
-        
-        // https://bridge-movie-back.onrender.com/api/v1/movies/
-        
+        const movieId = req.params.id;
+        const resp = await fetch(`https://bridge-movie-back.onrender.com/api/v1/movies/${movieId}`);
+        const peliculas = await resp.json();
+        res.redirect('admin/moviesAdmin.ejs')
     } catch (error) {
         console.log(error)
         

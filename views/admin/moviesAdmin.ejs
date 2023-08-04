@@ -1,5 +1,7 @@
+
 <%- include ('templates/adminHeader.ejs') %>
     <%- include('templates/adminNav.ejs') %>
+
         <main>
             <h2><%= titulo %></h2>
 
@@ -19,6 +21,7 @@
                             <th>Año</th>
                             <th>Director</th>
                             <th>Duración</th>
+                            <th>ID</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,8 +46,13 @@
                                     <td class="dataTabla">
                                         <%= element.duracion %>
                                     </td>
-                                    <td><a href="/admin/editar/<%= element.titulo %>" class="btn">Editar</a></td>
-                                    <td><a href="/admin/eliminar/?<%= element._id %>" class="btn">Eliminar</a></td>
+                                    <td class="dataTabla" value=<%=element._id %>>
+                                        <%= element._id %>
+                                    </td>
+                                    <td><a href="/admin/editar/<%= element.titulo %>" class="btnTabla">Editar</a></td>
+                                    <td><button id="btnEliminar" class="btn tabla" data-id=<%=element._id %>>X</button>
+                                    </td>
+
                                 </tr>
 
                                 <% }) %>

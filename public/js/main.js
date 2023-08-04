@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const editaPeli = document.querySelector("#editaPeli")
     const formulario = document.querySelector("formulario")
 
+
 const burgerMenu = document.getElementById('burger-menu');
         const overlay = document.getElementById('menu');
         burgerMenu.addEventListener('click', () => {
