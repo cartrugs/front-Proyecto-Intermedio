@@ -1,16 +1,12 @@
-<%- include ('templates/head.ejs') %>
-<%- include('templates/adminNav.ejs') %>
-    
-
+<%- include ('templates/adminHeader.ejs') %>
+    <%- include('templates/adminNav.ejs') %>
         <main>
-            <h2>Administrador de Películas</h2>
+            <h2><%= titulo %></h2>
 
             <section>
-
-                <a href="/admin/crear">Crear Película</a>
                 <input type="text" placeholder="Buscar peli...">
                 <button type="submit" class="btn">Buscar</button>
-
+                <button class="btn"><a href="/admin/crear">Crear Película</a></button>
             </section>
 
             <div class="contenedorTabla">
@@ -47,8 +43,8 @@
                                     <td class="dataTabla">
                                         <%= element.duracion %>
                                     </td>
-                                    <td><a href="/admin/editar/<%= element.titulo %>" class="btnTabla">Editar</a></td>
-                                    <td><a href="/admin/eliminar/?<%= element._id %>" class="btnTabla">Eliminar</a></td>
+                                    <td><a href="/admin/editar/<%= element.titulo %>" class="btn">Editar</a></td>
+                                    <td><a href="/admin/eliminar/?<%= element._id %>" class="btn">Eliminar</a></td>
                                 </tr>
 
                                 <% }) %>
@@ -58,5 +54,4 @@
                 </table>
             </div>
         </main>
-
-        <%- include ('templates/footer.ejs') %>
+<%- include ('templates/adminFooter.ejs') %>

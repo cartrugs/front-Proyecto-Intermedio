@@ -1,9 +1,9 @@
-<%- include ('templates/head.ejs') %>
+<%- include ('templates/adminHeader.ejs') %>
 <%- include('templates/adminNav.ejs') %>
     
 
         <main>
-            <h1>EDITAR PELÍCULA</h1>
+            <h2>EDITAR PELÍCULA</h2>
             <form action="/api/v1/movies/<%= peliculas.id %>" method="post" enctype="multipart/form-data">
                 <p>Editar una película</p>
                 <label for="titulo">Título:</label>
@@ -22,4 +22,4 @@
             </form>
         </main>
 
-        <%- include ('templates/footer.ejs') %>
+        <%- include ('templates/adminFooter.ejs') %>
