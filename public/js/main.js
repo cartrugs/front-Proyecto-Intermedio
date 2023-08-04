@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.querySelector("formulario")
 
 
+const burgerMenu = document.getElementById('burger-menu');
+        const overlay = document.getElementById('menu');
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('close');
+            overlay.classList.toggle('overlay');
+        });
 
     document.addEventListener('click', async (ev) => {
 

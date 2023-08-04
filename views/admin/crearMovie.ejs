@@ -1,12 +1,12 @@
-<%- include('templates/header.ejs') -%>
+
+<%- include ('templates/adminHeader.ejs') %>
 <%- include('templates/adminNav.ejs') %>
     
-
-
-
         <main>
+
             <h1>CREAR PELÍCULA</h1>
             <form id="formulario"  action="http://localhost:3000/api/v1/movies/" method="post" enctype="multipart/form-data">
+
                 <p>Crea una película nueva</p>
                 <label for="titulo">Título:</label>
                 <input type="text" placeholder="título" name="titulo" id="tituloId">
@@ -24,4 +24,4 @@
             </form>
         </main>
 
-        <%- include ('templates/footer.ejs') %>
+        <%- include ('templates/adminFooter.ejs') %>

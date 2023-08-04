@@ -1,0 +1,18 @@
+<%- include('templates/nav.ejs') %>
+<%- include('templates/header.ejs') %>
+<main>
+    <h2><%= titulo %></h2>
+
+    <div class="flexContainer">
+        <% peliculas.forEach(element => { %>
+            <figure>
+                <h3 class="textCenter"><%= element.titulo %></h3>
+                <p class="textCenter"><%= element.anio %></p>
+                <p class="textCenter"><%= element.director %></p>
+                <p class="textCenter"><%= element.genero %></p>
+                <p class="textCenter"><%= element.duracion %></p>
+            </figure>
+        <% }) %>
+    </div>
+</main>
+<%- include('templates/footer.ejs') %>
